@@ -13,12 +13,11 @@ func main() {
 
 	flag.Parse()
 
-	fmt.Println(*city)
 	geoData, err := geo.GetMyLocation(*city)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println(geoData)
+
 	weatherData := weather.GetWeather(*geoData, *format)
-	fmt.Println(weatherData)
+	fmt.Printf("%s\n %s\n", geoData.City, weatherData)
 }
