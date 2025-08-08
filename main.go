@@ -18,6 +18,6 @@ func main() {
 		fmt.Println(err.Error())
 	}
 
-	weatherData := weather.GetWeather(*geoData, *format)
+	weatherData, _ := weather.GetWeather(*geoData, *format)
 	fmt.Printf("%s\n %s\n", geoData.City, weatherData)
 }
